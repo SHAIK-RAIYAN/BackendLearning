@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit post</title>
+  </head>
+  <link rel="stylesheet" href="/styles.css" />
+  
+  <body>
+    <h1>Edit your post</h1>
+    <br />
+    <h3>Post id : <%= post.id %></h3>
+    <h3>Post username : @<%= post.username %></h3>
+    <br />
+    <p>New Content :</p>
+    <!-- we cant send patch request from html forms -->
+    <form method="post" action="/posts/<%= post.id %>?_method=PATCH">
+      <textarea
+        rows="10"
+        cols="40"
+        name="content"
+        placeholder="Write your new content here!">
+<%= post.content %></textarea
+      >
+      <button id="sub">Submit</button>
+    </form>
+  </body>
+</html>
