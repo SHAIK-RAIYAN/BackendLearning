@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page</title>
+    <link rel="stylesheet" href="/styles.css">
+
+  </head>
+  <body >
+    <h1>This is a home page</h1>
+    <br />
+    <hr />
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit perspiciatis
+      repudiandae sint magnam minus repellat nemo dolore accusamus libero
+      sapiente molestias aliquid modi iure iusto eos, obcaecati est tempora ab.
+      Dolorem labore ipsam, suscipit natus alias amet! Autem molestiae
+      consectetur iure exercitationem laudantium pariatur perferendis ex eius
+      omnis, quibusdam iusto consequatur, minima enim minus. Architecto fuga
+      quae omnis consequuntur quo. Dolorum explicabo harum dolor adipisci
+      dignissimos pariatur veritatis in officia ipsa aut eaque, sit tempore quod
+      rem quaerat veniam dolores asperiores vel! Eum saepe ea ab, minus vel
+      obcaecati veritatis!
+    </p>
+    <br /><br />
+    <label for="input">
+      <p>
+        Username :
+        <input type="text" placeholder="Username" id="input" name="username" />
+      </p>
+    </label>
+    <button>Submit (click me! )</button>
+    <br />
+    <hr />
+    <br />
+
+    <h1><%= "interpolation syntax".toUpperCase() %></h1>
+    <!-- Interpolation refers to embedding expressions into marked up text. Use Tags of ejs from https://ejs.co/#docs -->
+    <!-- We can write the Javascript code in html using these expressions -->
+    <h3>2 * 8 = <%= 2*8 %></h3>
+    <h3>5 * 3 = <%= 5*3   %></h3>
+
+    <footer>
+      <hr />
+      <h2>other routes :</h2>
+      <ul>
+        <li>/rolldice</li>
+        <li>/instagram/:username</li>
+      </ul>
+    </footer>
+  </body>
+</html>
