@@ -146,3 +146,46 @@ app.patch("/user/:id", (req, res) => {
     res.send("Some error occured");
   }
 });
+
+
+//go to add page
+app.get("/user/add", (req, res) => {
+  let { id } = req.params;
+  let q = `select * from user where id= '${id}';`;
+
+  try {
+    connection.query(q, (err, result) => {
+      if (err) {
+        throw err;
+      }
+      let user = result[0];
+      res.render("add", { user });
+    });
+  } catch (error) {
+    console.log(error);
+    res.send("Some error occured");
+  }
+});
+
+//add user info in database
+app.post("/user/adduser", (req, res) => {
+  let { username, email, password } = req.body;
+
+  let user = [faker.string.uuid(), username, email, password];
+
+  let q = "insert into user (id, username, email, password) values (?,?,?,?)";
+
+  try {
+    connection.query(q, user, (err, result) => {
+      if (err) {
+        throw err;
+      }
+      console.log(result);
+      res.redirect("/users");
+    });
+  } catch (error) {
+    console.log(error);
+    res.send("Some error occured");
+  }
+});
+
