@@ -189,3 +189,51 @@ app.post("/user/adduser", (req, res) => {
   }
 });
 
+
+// go to delete page
+app.get("/user/:id/delete", (req, res) => {
+  let { id } = req.params;
+  let q = `select * from user where id= '${id}';`;
+
+  try {
+    connection.query(q, (err, result) => {
+      if (err) {
+        throw err;
+      }
+      let user = result[0];
+      res.render("delete", { user });
+    });
+  } catch (error) {
+    console.log(error);
+    res.send("Some error occured");
+  }
+});
+
+//delete post
+app.delete("/user/:id", (req, res) => {
+  let { id } = req.params;
+  let { email, pass } = req.body;
+  let q = `select * from user where id= '${id}';`;
+  try {
+    connection.query(q, (err, result) => {
+      if (err) {
+        throw err;
+      }
+      let user = result[0];
+      if (email != user.email || pass != user.password) {
+        console.log(user);
+        res.send("Incorrect Email or Password");
+      } else {
+        let q2 = `DELETE FROM user WHERE id = '${id}';`;
+        connection.query(q2, (err, result) => {
+          if (err) throw err;
+          res.redirect("/users");
+        });
+      }
+    });
+  } catch (error) {
+    console.log(error);
+    res.send("Some error occured");
+  }
+});
+
