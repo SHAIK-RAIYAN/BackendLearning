@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>edit username</title>
+    <link rel='stylesheet' href='/styles.css'>
+
+  </head>
+  <body style="background-color: black; color: white">
+    <h2>Hello "<%= user.username %>"</h2>
+    <br />
+    <h3>You are going to change ur Username :</h3>
+    <form method="post" action="/user/<%=user.id%>?_method=PATCH" style="font-size: x-large">
+      <label for="username">
+        Username :
+        <textarea
+          rows="1"
+          name="uname"
+          id="username"
+          style="font-size: x-large">
+<%= user.username %></textarea
+        >
+      </label>
+      <br />
+      <label for="pass">
+        Enter Password : <input type="password" name="pass" id="pass" /> </label
+      ><br />
+      <button>Submit</button>
+    </form> 
+  </body>
+</html>
