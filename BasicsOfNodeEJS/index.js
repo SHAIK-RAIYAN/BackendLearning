@@ -38,3 +38,17 @@ app.get("/rolldice", (req, res) => {
   let diceVal = Math.floor(Math.random() * 7);
   res.render("rolldice.ejs", { diceVal }); //here end parameter is object it says  "diceVal(key) : diceVal(value)"
 });
+
+app.get("/instagram/:username", (req, res) => {
+  //{/:username} --> here it means optional parameter
+  const instaData = require("./exampleInstaData.json"); // usernames -> raiyan, fake, spider
+  // http://localhost:3000/instagram/raiyan
+  let { username } = req.params;
+  console.log(username);
+  let data = instaData[username];
+  if (!data) {
+    res.send("<h1>No username found</h1>");
+  }
+  res.render("instagram.ejs", { data });
+});
+
