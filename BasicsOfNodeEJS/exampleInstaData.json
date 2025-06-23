@@ -1,0 +1,61 @@
+{
+  "raiyan": {
+    "name": "raiyan",
+    "followers": 12400,
+    "following": 380,
+    "posts_num": 2,
+    "posts": [
+      {
+        "image": "https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg",
+        "likes": 1520,
+        "comments": 87
+      },
+      {
+        "image": "https://images.pexels.com/photos/30220913/pexels-photo-30220913.jpeg",
+        "likes": 1890,
+        "comments": 112
+      }
+    ]
+  },
+  "fake": {
+    "name": "Fake",
+    "followers": 58400,
+    "following": 210,
+    "posts_num": 3,
+    "posts": [
+      {
+        "image": "https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg",
+        "likes": 3100,
+        "comments": 240
+      },
+      {
+        "image": "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg",
+        "likes": 2745,
+        "comments": 198
+      },
+      {
+        "image": "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg",
+        "likes": 3320,
+        "comments": 305
+      }
+    ]
+  },
+  "spider": {
+    "name": "spider",
+    "followers": 21000,
+    "following": 520,
+    "posts_num": 2,
+    "posts": [
+      {
+        "image": "https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg",
+        "likes": 1760,
+        "comments": 130
+      },
+      {
+        "image": "https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg",
+        "likes": 2105,
+        "comments": 142
+      }
+    ]
+  }
+}
