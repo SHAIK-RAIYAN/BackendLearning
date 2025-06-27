@@ -27,9 +27,7 @@ app.listen(port, () => {
 });
 
 app.get("/", (req, res) => {
-  res.send(
-    "Go to view chats page : <a href='http://localhost:3000/chats'>http://localhost:3000/chats</a>"
-  );
+  res.render("home.ejs");
 });
 
 app.get("/chats", async (req, res) => {
