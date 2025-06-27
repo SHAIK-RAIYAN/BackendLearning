@@ -40,3 +40,50 @@ app.get("/chats", async (req, res) => {
 app.get("/chats/newchat", (req, res) => {
   res.render("newchat.ejs");
 });
+
+app.post("/chats", (req, res) => {
+  let { from, to, msg } = req.body;
+
+  let newChat = new Chat({
+    from: from,
+    to: to,
+    msg: msg,
+    created_on: new Date(),
+  });
+  newChat
+    .save()
+    .then(() => {
+      res.redirect("/chats");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+  //process related to DB but it has "then()" so then will wait to save and then continues the execution
+});
+
+app.get("/chats/:id/edit", async (req, res) => {
+  let { id } = req.params;
+  let chat = await Chat.findById(id);
+  res.render("editchat", { chat });
+});
+
+app.put("/chats/:id/edit", async (req, res) => {
+  let { id } = req.params;
+  let { newmsg } = req.body;
+  await Chat.findByIdAndUpdate(
+    id,
+    {
+      msg: newmsg,
+      created_on: new Date(),
+    },
+    { runValidators: true }
+  );
+
+  res.redirect("/chats");
+});
+
+app.delete("/chats/:id", async (req, res) => {
+  let { id } = req.params;
+  await Chat.findByIdAndDelete(id);
+  res.redirect("/chats");
+});
