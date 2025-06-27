@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Verdana, sans-serif;
+  background: #000;
+  color: #fff;
+  line-height: 1.6;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 5%;
+  background: linear-gradient(135deg, #111, #222);
+}
+
+.hero-text {
+  flex: 0 0 50%;
+}
+
+.hero-text h1 {
+  font-size: 6rem;
+  margin: 0;
+  background: linear-gradient(45deg, #ff4b2b, #ff416c, #00c6ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fadeInDown 1.5s ease;
+}
+
+.hero-img-container {
+  flex: 0 0 50%;
+  text-align: right;
+}
+
+.hero-img-container img {
+  width: 100%;
+  max-width: none;
+  border-radius: 20px;
+  border: 2px solid #fff;
+  padding: 10px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+.intro {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  padding: 40px 20px;
+}
+
+.card {
+  background: #111;
+  padding: 25px;
+  border: 1px solid #333;
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.card h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.cta-box {
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 16px;
+  margin: 40px 20px;
+  box-shadow: 0 5px 20px rgba(24, 227, 106, 0.3);
+  transition: background 0.5s ease;
+}
+
+.cta-box:hover {
+  background: linear-gradient(135deg, #18e36a, #2aff7a);
+}
+
+.cta-box h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.cta-box p {
+  font-size: 1.1rem;
+}
+
+.cta-btn {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  margin-top: 20px;
+  transition: background 0.3s;
+}
+
+.cta-btn:hover {
+  background: #111;
+}
+
+footer {
+  background: #111;
+  padding: 30px 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #aaa;
+}
+
+footer a {
+  color: #0af;
+  text-decoration: none;
+  margin: 0 8px;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
