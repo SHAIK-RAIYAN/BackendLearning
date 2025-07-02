@@ -47,6 +47,37 @@ app.get("/random", (req, res) => {
   res.send("this is a random page");
 });
 
+// Middleware for /api routes to check for token
+app.use('/api', (req, res, next) => {
+    let { token } = req.query; // Extract token from query parameters
+    if (token === 'giveaccess') {
+        next(); // Allow request to proceed if token is valid
+    } else {
+        res.send('DENIED!'); // Deny access if token is invalid
+    }
+});
+
+// Route to handle GET requests to /api
+app.get('/api', (req, res) => {
+    res.send('data'); // Send response if middleware allows
+});
+
+
+// Route to trigger an error
+app.get('/err', (req, res, next) => {
+    // Intentionally cause an error by referencing undefined variable
+    abcd = abcd; // This will throw a ReferenceError
+    res.send('This will not be reached due to error');
+});
+
+// Error-handling middleware
+app.use((err, req, res, next) => {
+    console.log('----- ERROR -----'); // Log error indicator
+    console.error(err.stack); // Log the full error stack for debugging
+    res.status(500).send('Something went wrong!'); // Send error response to client
+    next(err); // Pass error to next middleware (ie, default express error handler middleware) 
+});
+
 // Server listening
 app.listen(8080, () => {
   console.log("listening to port 8080");
