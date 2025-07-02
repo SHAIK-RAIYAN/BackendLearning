@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>New Chat - Chat with Me</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>✍️ Start a New Chat</h1>
+    <form action="/chats" method="POST" class="chat-form">
+      <label for="from">From:</label>
+      <input type="text" id="from" name="from" required>
+
+      <label for="to">To:</label>
+      <input type="text" id="to" name="to" required>
+
+      <label for="msg">Message:</label>
+      <textarea id="msg" name="msg" rows="4" required></textarea>
+
+      <button type="submit" class="new-chat-btn">Send Message</button>
+    </form>
+  </div>
+</body>
+</html>

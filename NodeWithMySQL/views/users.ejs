@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>show users</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body style="background-color: black; color: white">
+    <header style="text-align: right">
+      <button onclick="location.href='/user/add'">Add Info</button>
+    </header>
+    <table border="2">
+      <tr>
+        <th>Id</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Edit user</th>
+        <th>Delete</th>
+      </tr>
+      <% for( user of users ) { %>
+      <tr>
+        <td><%= user.id%></td>
+        <td><%= user.username%></td>
+        <td><%= user.email%></td>
+        <td>
+          <button
+            method="get"
+            onclick="location.href='/user/<%=user.id%>/edit'">
+            Edit
+          </button>
+        </td>
+        <td>
+          <button
+            method="delete"
+            onclick="location.href='/user/<%=user.id%>/delete'">
+            Delete
+          </button>
+        </td>
+      </tr>
+      <% } %>
+    </table>
+  </body>
+</html>

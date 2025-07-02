@@ -1,0 +1,140 @@
+/* ==== General Dark Theme ==== */
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 2rem;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3 {
+    color: #ffffff;
+    margin-bottom: 1rem;
+  }
+  
+  p {
+    margin-bottom: 1rem;
+  }
+  
+  hr {
+    border: 1px solid #444;
+    margin: 1.5rem 0;
+  }
+  
+  /* ==== Input Fields ==== */
+  input[type="text"] {
+    background-color: #1f1f1f;
+    color: #f0f0f0;
+    border: 1px solid #444;
+    padding: 0.5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  /* ==== Buttons ==== */
+  button {
+    background-color: #007acc;
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    transition: background-color 0.2s;
+  }
+  
+  button:hover {
+    background-color: #005a9c;
+  }
+  
+  /* ==== Lists and Footer ==== */
+  ul {
+    list-style: square inside;
+    padding-left: 0;
+  }
+  
+  footer {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #333;
+  }
+  
+  /* ==== Instagram-like Profile Layout ==== */
+  .profile {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+  
+  .profile img {
+    height: 120px;
+    width: 120px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .details {
+    flex-grow: 1;
+  }
+  
+  .uinfo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .uinfo button {
+    height: 30px;
+    font-size: 0.9rem;
+  }
+  
+  .profileInfo {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .intro p {
+    margin: 0.3rem 0;
+  }
+  
+  .intro button {
+    margin-right: 0.5rem;
+  }
+  
+  /* ==== Posts Section ==== */
+  .posts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+  
+  .postitem {
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    padding: 1rem;
+    border-radius: 8px;
+    max-width: 300px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+  
+  .postitem img {
+    height: 300px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .postinfo p {
+    margin: 0.2rem 0;
+  }
+  

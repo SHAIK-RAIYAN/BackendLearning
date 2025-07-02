@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Instagram</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body >
+    <h1>INSTAGRAM</h1>
+    <br />
+
+    <div class="profile">
+      <img src="img" alt="profile pic" />
+      <div class="details">
+        <div class="uinfo">
+          <div class="uname"><h2><%= data.name %></h2></div>
+          <button>Edit profile</button>
+          <button>View archive</button>
+          <button>&#9881</button>
+          
+        </div>
+        <div class="profileInfo">
+          <div class="post"><%= data.posts_num %> posts</div>
+          <div class="followers"><%= data.followers %> followers</div>
+          <div class="following"><%= data.following %> following</div>
+        </div>
+        <div class="intro">
+          <p><%= data.name %></p>
+          <p>details</p>
+          <p>Intro</p>
+          <p>some more info</p>
+          <p>and some more info</p>
+          <button>Follow</button>
+          <button>Message</button>
+        </div>
+      </div>
+    </div>
+<br>
+    <hr />
+    <br>
+    <h2>POSTs</h2>
+      <div class="posts">
+        <% for( let post of data.posts ) { %>
+          <div class="postitem">
+          <img src="<%= post.image %>" alt="post img">
+          <div class="postinfo">
+          <p><%= post.likes %> ❤️ </p>
+          <p><%= post.comments %> 🌨️ </p>
+        </div>
+        </div>
+        <% } %>
+      </div>
+      <%- include("includes/footer.ejs"); %>
+    </body>
+
+
+</html>
