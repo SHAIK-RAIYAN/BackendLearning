@@ -160,3 +160,129 @@ h1 {
   background-color: #e60000;
 }
 
+/* showchat.ejs */
+/* Global Reset */
+body {
+  margin: 0;
+  padding: 0;
+  background: #0d0d0d;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #f0f0f0;
+}
+
+/* Chat Detail Container */
+.chat-detail {
+  max-width: 700px;
+  margin: 80px auto;
+  background: linear-gradient(135deg, #1a1a1a, #0f0f0f);
+  padding: 40px 30px;
+  border-radius: 20px;
+  border: 1px solid #333;
+  box-shadow: 0 0 25px rgba(0, 255, 128, 0.15);
+  animation: fadeIn 0.8s ease-in;
+}
+
+/* Title Styling */
+.chat-detail h1 {
+  font-size: 3rem;
+  background: linear-gradient(90deg, #00ffcc, #33ccff, #00ff99);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  margin-bottom: 30px;
+  animation: fadeSlideDown 1s ease-out;
+}
+
+/* Paragraph Styling */
+.chat-detail p {
+  font-size: 1.2rem;
+  margin: 15px 0;
+  padding: 10px 15px;
+  background: #1a1a1a;
+  border-left: 4px solid #00ff99;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.chat-detail p:hover {
+  background: #262626;
+}
+
+/* Buttons */
+.edit-btn,
+.delete-btn,
+.cta-btn {
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  color: #fff;
+  border: none;
+  padding: 12px 28px;
+  margin: 10px 5px 0 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.edit-btn:hover {
+  background: linear-gradient(45deg, #18e36a, #2aff7a);
+}
+
+.delete-btn {
+  background: linear-gradient(45deg, #ff4b2b, #ff416c);
+}
+
+.delete-btn:hover {
+  background: linear-gradient(45deg, #ff1e56, #ff316e);
+}
+
+.cta-btn {
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+}
+
+.cta-btn:hover {
+  background: linear-gradient(45deg, #8e2de2, #4a00e0);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeSlideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .chat-detail {
+    margin: 40px 20px;
+    padding: 30px 20px;
+  }
+
+  .chat-detail h1 {
+    font-size: 2.2rem;
+  }
+
+  .edit-btn,
+  .delete-btn,
+  .cta-btn {
+    width: 100%;
+    margin-top: 12px;
+  }
+}
