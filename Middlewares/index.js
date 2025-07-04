@@ -23,6 +23,25 @@ Route-Specific: Can be applied globally (app.use()) or to specific routes (e.g.,
 //   next();
 // });
 
+
+// Middleware to check token in query parameters
+const checkToken = (req, res, next) => {
+  let { token } = req.query; // Extract token from query parameters
+  if (token === 'giveaccess') {
+      next(); // Allow request to proceed if token is valid
+  } else {
+    res.send('DENIED!'); // Deny access if token is invalid
+    // throw new Error("ACCESS DENIED!");
+  }
+};
+
+// Route to handle GET requests to /api with checkToken middleware
+app.get('/api', checkToken, (req, res) => {
+  res.send('data'); // Send response if middleware allows
+});
+//above we are checking 2 middle wares checktoken and callback
+// http://localhost:8080/api?token=giveaccess
+
 // Custom Logger Middleware like - morgan (it is a middleware which also returns method, name, path, time)
 app.use((req, res, next) => {
   req.time = Date.now();
