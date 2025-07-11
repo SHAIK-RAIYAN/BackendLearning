@@ -1,3 +1,4 @@
+// cookies
 const express = require("express");
 const app = express();
 
@@ -30,3 +31,4 @@ app.get("/verify", (req, res) => {
 
   console.dir(req.signedCookies);
 });
+//////////
